@@ -81,6 +81,7 @@ public class WebSocket extends EventDispatcher {
     } else {
       rawSocket = new Socket();
       if (scheme == "wss") {
+		this.port = parseInt(m[4] || "443");
         tlsConfig= new TLSConfig(TLSEngine.CLIENT,
             null, null, null, null, null,
             TLSSecurityParameters.PROTOCOL_VERSION);
